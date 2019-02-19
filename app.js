@@ -1,8 +1,17 @@
 // TODO
+
+var Banana = () => (
+  <div>Banana!</div>
+);
+
+var NotBanana = () => (
+  <div>Not Brunana!</div>
+);
+
 var App = () => (
   <ul>
-    <li>Banana!</li>
-    <li>Not Banana!</li>
+    <li><Banana /></li>
+    <li><NotBanana /></li>
   </ul>
 );
 
