@@ -1,17 +1,19 @@
 // TODO
 
-var Banana = () => (
-  <div>Banana!</div>
-);
+var Banana = (props) => <div>{props.food[0]}</div>;
 
-var NotBanana = () => (
-  <div>Not Brunana!</div>
-);
+var NotBanana = (props) => <div>{props.notFood.car}</div>;
+
+// var NotBanana = (props) => <div>Banana!</div>;
 
 var App = () => (
   <ul>
-    <li><Banana /></li>
-    <li><NotBanana /></li>
+    <li>
+      <Banana food={['Brunana!']} />
+    </li>
+    <li>
+      <NotBanana notFood={{ car: 'car' }} />
+    </li>
   </ul>
 );
 
