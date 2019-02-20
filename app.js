@@ -1,20 +1,28 @@
 // TODO
 
-var Banana = (props) => <div>{props.food[0]}</div>;
+// var Banana = (props) => <div>{props.food[0]}</div>;
 
-var NotBanana = (props) => <div>{props.notFood.car}</div>;
+class GroceryItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-// var NotBanana = (props) => <div>Banana!</div>;
+  render() {
+    //console.log(this.props.groceryItem);
+    return <li>{this.props.groceryItem}</li>;
+  }
+}
 
-var App = () => (
+var App = (props) => (
   <ul>
-    <li>
-      <Banana food={['Brunana!']} />
-    </li>
-    <li>
-      <NotBanana notFood={{ car: 'car' }} />
-    </li>
+    {props.items.map((item) => {
+      console.log(item);
+      return <GroceryItem groceryItem={item} />;
+    })}
   </ul>
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <App items={['Banana', 'Not Banana!', 'No, not this one, either!']} />,
+  document.getElementById('app')
+);
